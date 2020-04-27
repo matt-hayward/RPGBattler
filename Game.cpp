@@ -7,12 +7,13 @@ Game::Game()
 
 bool Game::OnUserCreate()
 {
+    HasPge::pge = this;
     return true;
 }
 
 bool Game::OnUserUpdate(float fElapsedTime)
 {
-    Clear(olc::Colours::PALE_DARK_GREEN);
+    Clear(olc::Pixel(53, 64, 72));
 
-    return true;
+    return sceneManager.GetCurrentScene()->OnUserUpdate(fElapsedTime);
 }
