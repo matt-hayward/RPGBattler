@@ -1,9 +1,10 @@
 #ifndef RPGBATTLER_GAME_H
 #define RPGBATTLER_GAME_H
 
-#include "olcPixelGameEngine.h"
-#include "olcPGEX_AdditionalColours.h"
-#include "SceneManager.h"
+#include "pge/olcPixelGameEngine.h"
+#include "pge/olcPGEX_AdditionalColours.h"
+#include "scenes/SceneManager.h"
+#include "Player.h"
 
 class Game : public olc::PixelGameEngine
 {
@@ -13,6 +14,10 @@ public:
 public:
     bool OnUserCreate() override;
     bool OnUserUpdate(float fElapsedTime) override;
+    Player* GetPlayer();
+
+public:
+    Player player;
 
 protected:
     SceneManager sceneManager;

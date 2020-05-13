@@ -2,7 +2,8 @@
 #define RPGBATTLER_SCENE_H
 
 #include <string>
-#include "HasPge.h"
+#include "../pge/HasPge.h"
+#include "../ui/UiManager.h"
 
 class SceneManager;
 
@@ -13,12 +14,16 @@ public:
     ~Scene();
 
 public:
-    void Draw();
-    bool OnUserUpdate(float);
+    virtual void Draw();
+    virtual bool OnUserLoad();
+    virtual bool OnUserUpdate(float);
+    virtual bool OnUserUnload();
 
 public:
     std::string title;
     SceneManager* manager;
+    UiManager ui;
+    bool isLoaded = false;
 };
 
 

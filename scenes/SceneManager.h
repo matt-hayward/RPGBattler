@@ -2,7 +2,7 @@
 #define RPGBATTLER_SCENEMANAGER_H
 
 #include <map>
-#include "HasPge.h"
+#include "../pge/HasPge.h"
 #include "Scene.h"
 
 class SceneManager : public HasPge
@@ -16,7 +16,7 @@ public:
 
 public:
     enum class SCENE {
-        MAIN_MENU, LOBBY, SHOP, BATTLE
+        MAIN_MENU, NEW_PLAYER, LOAD_GAME, LOBBY, SHOP, BATTLE
     };
     SCENE nextScene = SCENE::MAIN_MENU;
 

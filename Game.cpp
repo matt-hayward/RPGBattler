@@ -17,3 +17,8 @@ bool Game::OnUserUpdate(float fElapsedTime)
 
     return sceneManager.GetCurrentScene()->OnUserUpdate(fElapsedTime);
 }
+
+Player* Game::GetPlayer()
+{
+    return &player;
+}
