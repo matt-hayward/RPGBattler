@@ -1,5 +1,5 @@
 #include "HasPge.h"
-#include "Game.h"
+#include "../Game.h"
 
 HasPge::HasPge() = default;
 

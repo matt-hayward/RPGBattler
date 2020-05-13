@@ -1,5 +1,5 @@
 #include "Scene.h"
-#include "Game.h"
+#include "../Game.h"
 #include "SceneManager.h"
 
 #include <utility>
@@ -35,5 +35,17 @@ bool Scene::OnUserUpdate(float fElapsedTime)
         manager->nextScene = SceneManager::SCENE::MAIN_MENU;
     }
 
+    return true;
+}
+
+bool Scene::OnUserLoad()
+{
+    isLoaded = true;
+    return true;
+}
+
+bool Scene::OnUserUnload()
+{
+    isLoaded = false;
     return true;
 }
