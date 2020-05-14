@@ -45,7 +45,6 @@ bool MainMenu::OnUserLoad()
       .AddElement(new Button({210, 200}, {10, 10}, "loadGameButton", "Load Game", olc::Colours::PURPLE, olc::Colours::DARK_PURPLE))
       .AddElement(new Button({210, 250}, {10, 10}, "exitButton", "Exit Game", olc::Colours::ORANGE, olc::Colours::VERY_DARK_ORANGE));
     isLoaded = true;
-    SaveManager::LoadSave(pge, "SALADIN");
 
     return true;
 }
