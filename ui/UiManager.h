@@ -14,8 +14,6 @@ public:
     UiManager& AddElement(UiElement* element);
     UiElement* GetElement(const std::string& id);
     void Draw();
-    void Init();
-    void Update();
 
 protected:
     std::map<std::string, UiElement*> elements;

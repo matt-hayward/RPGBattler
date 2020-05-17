@@ -40,11 +40,18 @@ bool MainMenu::OnUserUpdate(float fElapsedTime)
 
 bool MainMenu::OnUserLoad()
 {
-    // TODO: Disable 'Load Game' button if there are no save files
     ui.AddElement(new Button({210, 150}, {10,10}, "newGameButton", "New Game", olc::Colours::COBALT_BLUE, olc::Colours::DARK_COBALT_BLUE))
       .AddElement(new Button({210, 200}, {10, 10}, "loadGameButton", "Load Game", olc::Colours::PURPLE, olc::Colours::DARK_PURPLE))
       .AddElement(new Button({210, 250}, {10, 10}, "exitButton", "Exit Game", olc::Colours::ORANGE, olc::Colours::VERY_DARK_ORANGE));
     isLoaded = true;
+
+    if (SaveManager::ListSaves().empty()) {
+        ui.GetElement("loadGameButton")->isDisabled = true;
+    }
+
+    if (SaveManager::ListSaves().size() >= 3) {
+        ui.GetElement("newGameButton")->isDisabled = true;
+    }
 
     return true;
 }
