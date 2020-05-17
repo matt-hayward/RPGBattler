@@ -18,13 +18,3 @@ void UiManager::Draw()
         e.second->Draw();
     }
 }
-
-void UiManager::Init()
-{
-    // TODO: Maybe get rid of this, as the manager is now intended to be more generic
-}
-
-void UiManager::Update()
-{
-    // TODO: Maybe get rid of this, as the manager is now intended to be more generic
-}

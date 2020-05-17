@@ -14,8 +14,6 @@ void Panel::Draw()
         pos += parent->GetPosition();
     }
 
-    // TODO: Consider drawing to off-screen sprite to reduce per-pixel filling
-
     pge->DrawRect(pos, size, borderColour);
     pge->FillRect({ pos.x + 1, pos.y + 1 }, { size.x - 1, size.y - 1 }, backgroundColour);
 

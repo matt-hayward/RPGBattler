@@ -19,7 +19,6 @@ void LoadGame::Draw()
 
 bool LoadGame::OnUserLoad()
 {
-    // TODO: Enhance layout to use columns - six rows per column
     saves = SaveManager::ListSaves();
 
     int count = 1, x = 10, y = 50, inc = 40;
